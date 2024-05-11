@@ -67,3 +67,4 @@ if not os.path.exists(save_dir):
 save_to_csv(articles_data, os.path.join(save_dir, 'data.csv'))
 
 print("Data saved to data.csv")
+print(1)
