@@ -79,7 +79,7 @@ The setup of DVC involves several steps to enable versioning and tracking of dat
 - Integrate Airflow with DVC to manage data versioning and pipeline execution.
 - Use DVC commands within Airflow tasks to track changes to data files and ensure reproducibility of data preprocessing workflows.
 
-### DAG GRAPH
+## DAG GRAPH
 <img width="410" alt="image" src="https://github.com/ahsanrbaloch/Basic-ETL-Pipeline-Airflow/assets/72220980/21f25da7-8b12-4376-84ea-fd7d39524f40">
 
 ## Conclusion
