@@ -1,6 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
 import csv
+import os
 
 def extract_links(url):
     response = requests.get(url)
@@ -51,14 +52,18 @@ for index, link in enumerate(bbc_links, start=1):
         articles_data.extend(extract_articles(link))
         print(f"{index}/{total_links} links done from BBC.")
 
-# Extract articles data from Dawn
-print("Extracting articles from Dawn...")
-for index, link in enumerate(dawn_links, start=index):
-    if link.startswith('https://www.dawn.com'):
-        articles_data.extend(extract_articles(link))
-        print(f"{index}/{total_links} links done from Dawn.")
+# # Extract articles data from Dawn
+# print("Extracting articles from Dawn...")
+# for index, link in enumerate(dawn_links, start=index):
+#     if link.startswith('https://www.dawn.com'):
+#         articles_data.extend(extract_articles(link))
+#         print(f"{index}/{total_links} links done from Dawn.")
 
 # Save the extracted data to a CSV file
-save_to_csv(articles_data, 'data.csv')
+save_dir = "/home/ahsanrbaloch/A2/"
+
+if not os.path.exists(save_dir):
+    os.makedirs(save_dir)
+save_to_csv(articles_data, os.path.join(save_dir, 'data.csv'))
 
 print("Data saved to data.csv")
