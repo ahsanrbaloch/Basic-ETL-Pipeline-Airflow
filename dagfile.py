@@ -139,11 +139,11 @@ dag = DAG(
     schedule_interval=None,
 )
 
-# extract_data_task = PythonOperator(
-#     task_id='extract_data',
-#     python_callable=extract_data,
-#     dag=dag,
-# )
+extract_data_task = PythonOperator(
+    task_id='extract_data',
+    python_callable=extract_data,
+    dag=dag,
+)
 
 transform_data_task = PythonOperator(
     task_id='transform_data',
@@ -157,4 +157,4 @@ load_data_task = PythonOperator(
 )
 
 # Define task dependencies
-transform_data_task >> load_data_task
+extract_data_task >> transform_data_task >> load_data_task
