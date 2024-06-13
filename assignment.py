@@ -52,12 +52,12 @@ for index, link in enumerate(bbc_links, start=1):
         articles_data.extend(extract_articles(link))
         print(f"{index}/{total_links} links done from BBC.")
 
-# # Extract articles data from Dawn
-# print("Extracting articles from Dawn...")
-# for index, link in enumerate(dawn_links, start=index):
-#     if link.startswith('https://www.dawn.com'):
-#         articles_data.extend(extract_articles(link))
-#         print(f"{index}/{total_links} links done from Dawn.")
+# Extract articles data from Dawn
+print("Extracting articles from Dawn...")
+for index, link in enumerate(dawn_links, start=index):
+    if link.startswith('https://www.dawn.com'):
+        articles_data.extend(extract_articles(link))
+        print(f"{index}/{total_links} links done from Dawn.")
 
 # Save the extracted data to a CSV file
 save_dir = "/home/ahsanrbaloch/A2/"
